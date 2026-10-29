@@ -11,6 +11,8 @@ namespace Ip\Internal\Grid\Model;
  */
 class Display
 {
+    protected $statusVariables;
+
 
     /**
      * @var Config

@@ -1,7 +1,7 @@
 <ul class="tabs">
     <?php foreach ($values as $tabKey => $value) { ?>
     <li>
-        <a href="#ipInlineManagementTextTabs-<?php echo $value['languageId']; ?>"><?php echo htmlspecialchars($value['language']); ?></a>
+        <a href="#ipInlineManagementTextTabs-<?php echo $value['languageId']; ?>"><?php echo htmlspecialchars((string)$value['language']); ?></a>
     </li>
     <?php } ?>
 </ul>

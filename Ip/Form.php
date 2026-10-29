@@ -249,7 +249,7 @@ class Form
      * @param View $view
      * @return string HTML form
      */
-    public function render(\Ip\View $view = null)
+    public function render(?\Ip\View $view = null)
     {
         if (!$view) {
             if ($this->getEnvironment() == self::ENVIRONMENT_ADMIN) {
@@ -345,7 +345,7 @@ class Form
     {
         $answer = '';
         foreach ($this->getAttributes() as $attributeKey => $attributeValue) {
-            $answer .= ' ' . htmlspecialchars($attributeKey) . '="' . htmlspecialchars($attributeValue) . '"';
+            $answer .= ' ' . htmlspecialchars((string)$attributeKey) . '="' . htmlspecialchars((string)$attributeValue) . '"';
         }
         return $answer;
     }

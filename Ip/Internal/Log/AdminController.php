@@ -81,7 +81,7 @@ class AdminController extends \Ip\GridController
                 if (is_object($v)) {
                     $v = serialize($v);
                 }
-                $v = htmlspecialchars($v);
+                $v = htmlspecialchars((string)$v);
             }
         );
 
