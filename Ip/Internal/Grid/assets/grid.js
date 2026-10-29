@@ -86,7 +86,7 @@
                     window.location.hash = value.hash;
                     break;
                 case 'showMessage':
-                    alert(value.message);
+                    ipAdminNotify.error(value.message);
                     break;
             }
         });
@@ -116,9 +116,7 @@
                 context: $grid,
                 success: initResponse,
                 error: function (response) {
-                    if (ip.debugMode || ip.developmentMode) {
-                        alert(response);
-                    }
+                    ipAdminNotify.ajaxError(response);
                 },
                 dataType: 'json'
             });
@@ -144,9 +142,7 @@
                 context: $grid,
                 success: initResponse,
                 error: function (response) {
-                    if (ip.debugMode || ip.developmentMode) {
-                        alert(response);
-                    }
+                    ipAdminNotify.ajaxError(response);
                 },
                 dataType: 'json'
             });
@@ -173,9 +169,7 @@
                 context: $grid,
                 success: initResponse,
                 error: function (response) {
-                    if (ip.debugMode || ip.developmentMode) {
-                        alert(response);
-                    }
+                    ipAdminNotify.ajaxError(response);
                 },
                 dataType: 'json'
             });
@@ -327,7 +321,7 @@
         var $form = $(event.currentTarget);
         var position = $form.find('input[name=position]').val();
         if (position == '') {
-            alert('Please enter an integer number');
+            ipAdminNotify.error('Please enter an integer number');
             return;
         }
 
@@ -353,9 +347,7 @@
                 $.proxy(doCommands, $grid)(response.result);
             },
             error: function (response) {
-                if (ip.debugMode || ip.developmentMode) {
-                    alert(response);
-                }
+                ipAdminNotify.ajaxError(response);
             }
 
         });
@@ -405,9 +397,7 @@
                 $.proxy(doCommands, $grid)(response.result);
             },
             error: function (response) {
-                if (ip.debugMode || ip.developmentMode) {
-                    alert(response);
-                }
+                ipAdminNotify.ajaxError(response);
             }
         });
     };
@@ -492,9 +482,7 @@
 
             },
             error: function (response) {
-                if (ip.debugMode || ip.developmentMode) {
-                    alert(response);
-                }
+                ipAdminNotify.ajaxError(response);
             }
         });
 
@@ -516,9 +504,7 @@
             context: $grid,
             success: deleteResponse,
             error: function (response) {
-                if (ip.debugMode || ip.developmentMode) {
-                    alert(response);
-                }
+                ipAdminNotify.ajaxError(response);
             },
             dataType: 'json'
         });
@@ -529,9 +515,7 @@
         if (!response.error) {
             $.proxy(doCommands, $this)(response.result);
         } else {
-            if (ip.debugMode || ip.developmentMode) {
-                alert(response.errorMessage);
-            }
+            ipAdminNotify.error(response.errorMessage);
         }
 
     };

@@ -37,9 +37,7 @@ function ipBrowseLink(callback) {
                 callback(response.pageUrl);
             },
             error: function (response) {
-                if (ip.developmentEnvironment || ip.debugMode) {
-                    alert('Server response: ' + response.responseText);
-                }
+                ipAdminNotify.ajaxError(response);
                 callback('');
             }
         });

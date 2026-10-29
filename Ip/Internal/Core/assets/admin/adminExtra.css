@@ -292,3 +292,9 @@
 .ip .ipModuleGrid[data-gateway*="aa=Log."] td:first-child {
     white-space: nowrap;
 }
+
+/* Design → Options: a little more room for long option groups */
+.ip .ipModuleDesignConfig .modal-dialog {
+    width: 380px;
+    max-width: calc(100vw - 16px);
+}

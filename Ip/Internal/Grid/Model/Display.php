@@ -101,6 +101,8 @@ class Display
             'searchForm' => $this->searchForm($searchVariables),
             'moveForm' => $this->moveForm(),
             'title' => $subgridConfig->getTitle(),
+            'updateTitle' => $subgridConfig->updateTitle(),
+            'createTitle' => $subgridConfig->createTitle(),
             'breadcrumb' => $this->getBreadcrumb(),
             'pageSize' => $pageSize,
             'pageSizes' => $values

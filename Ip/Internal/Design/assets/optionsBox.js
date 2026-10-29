@@ -437,7 +437,7 @@ var ipDesign = new function () {
         var x2 = $(window).width() - $('.ipModuleDesignConfig .ipsDialog').width() - 20;
         var y2 = $(window).height() - 150;
         var topOffset = parseInt($('.ipModuleDesignConfig .ipsDialog').css('top'));
-        $('.ipModuleDesignConfig .ipsBody').css('max-height', $(window).height() - topOffset - 170);
+        $('.ipModuleDesignConfig .ipsBody').css('max-height', $(window).height() - topOffset - 130);
 
         fixAccordion();
     };

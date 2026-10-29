@@ -64,7 +64,7 @@ var ipTrash = null;
             context: this,
             success: function (response) {
                 if (response.error && response.errorMessage) {
-                    alert(response.errorMessage);
+                    ipAdminNotify.error(response.errorMessage);
                 } else {
                     location.reload(true);
                 }
@@ -89,7 +89,7 @@ var ipTrash = null;
             context: this,
             success: function (response) {
                 if (response.error && response.errorMessage) {
-                    alert(response.errorMessage);
+                    ipAdminNotify.error(response.errorMessage);
                 } else {
                     location.reload(true);
                 }

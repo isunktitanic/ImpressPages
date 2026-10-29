@@ -400,7 +400,7 @@ var ipContent = new function () {
             data: data,
             success: function (response) {
                 if (response.status == 'error') {
-                    alert(response.errorMessage);
+                    ipAdminNotify.error(response.errorMessage);
                 }
                 var $block = $('#ipBlock-' + response.block);
 
@@ -500,7 +500,7 @@ var ipContent = new function () {
             data: data,
             success: function (response) {
                 if (response.status == 'error') {
-                    alert(response.errorMessage);
+                    ipAdminNotify.error(response.errorMessage);
                 }
                 var $block = $('#ipBlock-' + response.block);
 
