@@ -119,8 +119,8 @@
 .ip .btn-new,
 .ip .ipAdminPages ._menus .btn-new,
 .ip .ipAdminPages ._languages .btn-new {
-    border-color: #0b7fb0;
-    background: #0b7fb0;
+    border-color: #111827;
+    background: #111827;
     color: #fff;
 }
 .ip .btn-primary:hover,
@@ -133,8 +133,8 @@
 .ip .ipAdminPages ._menus .btn-new:focus,
 .ip .ipAdminPages ._languages .btn-new:hover,
 .ip .ipAdminPages ._languages .btn-new:focus {
-    border-color: #096a93;
-    background: #096a93;
+    border-color: #374151;
+    background: #374151;
     color: #fff;
 }
 .ip .btn-danger {
@@ -192,7 +192,7 @@
     user-select: none;
 }
 .ip legend[data-toggle=collapse]:hover {
-    color: #0b7fb0;
+    color: #111827;
 }
 
 /* Dialogs */
@@ -231,7 +231,7 @@
     color: #4b5160;
 }
 .ip .ipAdminSubmenu ul a:hover {
-    color: #0b7fb0;
+    color: #111827;
 }
 .ip .ipAdminSubmenu ul .active a {
     color: #111827;
@@ -376,7 +376,7 @@
     transition: left .15s;
 }
 .ip .ipAdminSwitch._on {
-    background: #0b7fb0;
+    background: #111827;
 }
 .ip .ipAdminSwitch._on ._knob {
     left: 20px;
@@ -576,4 +576,10 @@
 }
 .ip .btn-group > .btn {
     float: none;
+}
+
+/* Checkboxes and radio buttons use the same black accent as main buttons and switches */
+.ip input[type=checkbox],
+.ip input[type=radio] {
+    accent-color: #111827;
 }
