@@ -276,3 +276,19 @@
     margin-top: 0;
     margin-bottom: 0;
 }
+
+/* Grid tables: long unbroken values (paths, URLs, e-mails) wrap instead of widening the page */
+.ip .ipModuleGrid td {
+    overflow-wrap: anywhere;
+}
+
+/* Log: readable context column */
+.ip .ipModuleGrid[data-gateway*="aa=Log."] td:last-child {
+    font-family: SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    white-space: pre-wrap;
+    color: #4b5160;
+}
+.ip .ipModuleGrid[data-gateway*="aa=Log."] td:first-child {
+    white-space: nowrap;
+}
