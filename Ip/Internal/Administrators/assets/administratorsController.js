@@ -101,6 +101,7 @@ var ipAdministratorsController = null;
                 value: value ? 1 : 0,
                 adminId: $scope.activeAdministrator.id
             };
+            ipAdminNotify.saving();
             $.ajax({
                 type: 'POST',
                 url: ip.baseUrl,
@@ -109,12 +110,13 @@ var ipAdministratorsController = null;
                 success: function (response) {
                     $scope.activeAdministrator.permissions[permission] = value;
                     $scope.$apply();
+                    ipAdminNotify.saved(ipAdminNotifyTranslations['Permission updated']);
                     if (callback) {
                         callback();
                     }
                 },
                 error: function (response) {
-                    alert('Error: ' + response.responseText);
+                    ipAdminNotify.ajaxError(response);
                 },
                 dataType: 'json'
             });

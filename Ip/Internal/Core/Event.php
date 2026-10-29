@@ -86,6 +86,7 @@ class Event
                     'Page settings saved' => __('Page settings saved', 'Ip-admin', false),
                     'Plugin settings saved' => __('Plugin settings saved', 'Ip-admin', false),
                     'Theme options saved' => __('Theme options saved', 'Ip-admin', false),
+                    'Permission updated' => __('Permission updated', 'Ip-admin', false),
                     'Saved to the live site' => __('Saved to the live site', 'Ip-admin', false),
                     'Saved as draft. Publish to make it live.' => __('Saved as draft. Publish to make it live.', 'Ip-admin', false),
                     'Published' => __('Published', 'Ip-admin', false),
