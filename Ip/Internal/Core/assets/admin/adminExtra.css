@@ -583,3 +583,151 @@
 .ip input[type=radio] {
     accent-color: #111827;
 }
+
+/*
+ * Main admin menu (hamburger): a light floating panel over a dimmed page,
+ * roomy rows, soft hover, black pill for the current section, Log out set apart.
+ */
+/* slide only, no fade: if animations are paused the panel is still fully visible */
+@keyframes ipAdminMenuIn {
+    from {
+        transform: translateX(-6px);
+    }
+    to {
+        transform: none;
+    }
+}
+.ip .ipAdminNavbar ._menu {
+    top: 8px;
+    left: 8px;
+    width: 264px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #fff;
+    /* second shadow dims the page behind the panel */
+    box-shadow: 0 24px 48px -12px rgba(16, 24, 40, .28), 0 0 0 100vmax rgba(15, 23, 42, .28);
+    animation: ipAdminMenuIn .16s ease-out;
+}
+.ip .ipAdminNavbar ._menuHeader {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 56px;
+    padding: 0 12px;
+    border-bottom: 1px solid #eef0f3;
+    background: #fff;
+}
+.ip .ipAdminNavbar ._menuHeader ._toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0 9px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.ip .ipAdminNavbar ._menuHeader ._toggle:hover,
+.ip .ipAdminNavbar ._menuHeader ._toggle:focus {
+    background: #f3f4f6;
+}
+.ip .ipAdminNavbar ._menuHeader ._toggle .icon-bar {
+    width: 18px;
+    height: 2px;
+    margin: 0;
+    border-radius: 2px;
+    background: #111827;
+}
+.ip .ipAdminNavbar ._menuHeader .navbar-text {
+    margin: 0;
+    color: #111827;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+}
+.ip .ipAdminNavbar ._menuContainer {
+    height: auto !important; /* admin.js sets a full-window height; size to the content instead */
+    max-height: calc(100vh - 16px - 58px);
+    padding: 8px 0;
+}
+.ip .ipAdminNavbar ._menuContainer nav {
+    margin: 0;
+}
+.ip .ipAdminNavbar ._menu .nav,
+.ip .ipAdminNavbar ._menu .nav:last-child {
+    margin: 0;
+    padding: 0 8px;
+    border: 0;
+}
+.ip .ipAdminNavbar ._menu .nav > li,
+.ip .ipAdminNavbar ._menu .nav:last-child > li {
+    border: 0;
+}
+.ip .ipAdminNavbar ._menu .nav-stacked > li + li {
+    margin-top: 2px;
+}
+.ip .ipAdminNavbar ._menu .nav > li > a,
+.ip .ipAdminNavbar ._menu .nav:last-child > li > a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: transparent;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    transition: background-color .12s, color .12s;
+}
+.ip .ipAdminNavbar ._menu .fa-fw {
+    width: 18px;
+    font-size: 18px;
+    color: #6b7280;
+    text-align: center;
+}
+.ip .ipAdminNavbar ._menu .nav > li > a:hover,
+.ip .ipAdminNavbar ._menu .nav > li > a:focus {
+    background: #f3f4f6;
+    color: #111827;
+}
+.ip .ipAdminNavbar ._menu .nav > li > a:hover .fa-fw,
+.ip .ipAdminNavbar ._menu .nav > li > a:focus .fa-fw {
+    color: #111827;
+}
+.ip .ipAdminNavbar ._menu .nav > .active > a,
+.ip .ipAdminNavbar ._menu .nav > .active > a:hover,
+.ip .ipAdminNavbar ._menu .nav > .active > a:focus {
+    background: #111827;
+    color: #fff;
+    font-weight: 600;
+}
+.ip .ipAdminNavbar ._menu .nav > .active > a .fa-fw {
+    color: #fff;
+}
+/* Log out: its own group at the bottom */
+.ip .ipAdminNavbar ._menu .nav:last-child {
+    margin: 8px 8px 0;
+    padding: 8px 0 0;
+    border-top: 1px solid #eef0f3;
+}
+.ip .ipAdminNavbar ._menu .nav:last-child > li > a:hover,
+.ip .ipAdminNavbar ._menu .nav:last-child > li > a:focus {
+    background: #fef3f2;
+    color: #b42318;
+}
+.ip .ipAdminNavbar ._menu .nav:last-child > li > a:hover .fa-fw,
+.ip .ipAdminNavbar ._menu .nav:last-child > li > a:focus .fa-fw {
+    color: #b42318;
+}
+@media (prefers-reduced-motion: reduce) {
+    .ip .ipAdminNavbar ._menu {
+        animation: none;
+    }
+}
