@@ -221,10 +221,11 @@
             $form.find('input[name=gridHash]').remove();
             $form.append($('<input type="hidden" name="gridHash" />').val(window.location.hash));
             $form.on('ipSubmitResponse', function (e, response) {
-                if (!response.error) {
+                if (!response.error && !response.errors) {
                     $modal.modal('hide');
                     //form has been successfully submitted.
                     $.proxy(doCommands, $grid)(response.result.commands);
+                    ipAdminNotify.saved();
                 }
             });
             $modal.find('.ipsConfirm').off().on('click', function () {
@@ -263,7 +264,7 @@
             $form.append($('<input type="hidden" name="gridHash" />').val(window.location.hash));
 
             $form.on('ipSubmitResponse', function (e, response) {
-                if (!response.error) {
+                if (!response.error && !response.errors) {
                     $modal.modal('hide');
                     //form has been successfully submitted.
                     $.proxy(doCommands, $grid)(response.result.commands);
@@ -447,10 +448,11 @@
                 $form.append($('<input type="hidden" name="gridHash" />').val(window.location.hash));
 
                 $form.on('ipSubmitResponse', function (e, response) {
-                    if (!response.error) {
+                    if (!response.error && !response.errors) {
                         $modal.modal('hide');
                         //form has been successfully submitted.
                         $.proxy(doCommands, $grid)(response.result.commands);
+                        ipAdminNotify.saved();
                     }
                 });
                 $modal.find('.form-group').not('.type-blank').first().find('input').focus();

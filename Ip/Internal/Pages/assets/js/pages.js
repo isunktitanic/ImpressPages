@@ -815,3 +815,30 @@ var ipPageDragId;
     }
 
 })(jQuery);
+
+// Ask before leaving page properties with unsaved changes (switching page, menu or language, or leaving the admin).
+(function () {
+    "use strict";
+    var hasUnsavedChanges = function () {
+        return $('.ipsProperties').data('ipPagePropertiesDirty') === true;
+    };
+
+    document.addEventListener('click', function (e) {
+        var $target = $(e.target).closest('.ipsLanguages a, .ipsMenuList li > a, .ipsPages a, .ipsPages .ipsRow, .ipsAddPage');
+        if (!$target.length || !hasUnsavedChanges()) {
+            return;
+        }
+        if (ipAdminConfirmDiscard()) {
+            $('.ipsProperties').data('ipPagePropertiesDirty', false);
+        } else {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+        }
+    }, true);
+
+    $(window).on('beforeunload.ipPages', function () {
+        if (hasUnsavedChanges()) {
+            return ipAdminNotifyTranslations['You have unsaved changes. Leave without saving?'];
+        }
+    });
+})();

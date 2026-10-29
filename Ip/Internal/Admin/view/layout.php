@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?php ipAddCss('Ip/Internal/Core/assets/admin/admin.css'); ?>
+    <?php ipAddCss('Ip/Internal/Core/assets/admin/adminExtra.css'); ?>
 
     <?php echo ipHead(); ?>
 </head>

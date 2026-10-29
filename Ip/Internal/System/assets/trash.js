@@ -70,9 +70,7 @@ var ipTrash = null;
                 }
             },
             error: function (response) {
-                if (ip.developmentEnvironment || ip.debugMode) {
-                    alert('Server response: ' + response.responseText);
-                }
+                ipAdminNotify.ajaxError(response);
             },
             dataType: 'json'
         });
@@ -97,9 +95,7 @@ var ipTrash = null;
                 }
             },
             error: function (response) {
-                if (ip.developmentEnvironment || ip.debugMode) {
-                    alert('Server response: ' + response.responseText);
-                }
+                ipAdminNotify.ajaxError(response);
             },
             dataType: 'json'
         });

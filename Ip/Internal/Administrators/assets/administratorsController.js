@@ -77,6 +77,7 @@ var ipAdministratorsController = null;
                     $scope.activeAdministrator.email = $form.find('input[name=email]').val();
                     $scope.$apply();
                     $modal.modal('hide');
+                    ipAdminNotify.saved();
                 }
             });
             $modal.find('.ipsSave').off('click').on('click', function () {

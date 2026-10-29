@@ -6,11 +6,15 @@ $buttonClass = 'btn-default';
 $button2Class = 'btn-default';
 $revisionClass = 'btn-default';
 $button2Action = 'ipsContentSave';
-$button2Text = __('Save', 'Ip-admin', false);
+$button2Text = __('Save draft', 'Ip-admin', false);
+$statusText = __('Live: no unpublished changes', 'Ip-admin', false);
+$statusClass = '';
 if (!$isPublished) {
     $buttonText = __('Publish', 'Ip-admin', false);
     $buttonClass = 'btn-warning';
     $revisionClass = 'btn-warning';
+    $statusText = __('Unpublished changes', 'Ip-admin', false);
+    $statusClass = '_unpublished';
 }
 
 if (!$isVisible && ipIsManagementState()) {
@@ -21,11 +25,14 @@ if (!$isVisible && ipIsManagementState()) {
     $revisionClass = 'btn-warning';
     $buttonClass = 'btn-default';
 
-    $buttonText = __('Save', 'Ip-admin', false);
+    $buttonText = __('Save draft', 'Ip-admin', false);
     $button2Text = __('Publish', 'Ip-admin', false);
+    $statusText = __('Hidden page: not shown on the site', 'Ip-admin', false);
+    $statusClass = '_hidden';
 }
 
 ?>
+<span class="ipModuleContentPublishStatus ipsContentStatus <?php echo $statusClass ?>"><?php echo esc($statusText) ?></span>
 <div class="ipModuleContentPublishButton btn-group">
     <button type="button" class="btn <?php echo $buttonClass ?> navbar-btn <?php echo $buttonAction ?>"><?php echo esc($buttonText) ?></button>
     <button type="button" class="btn <?php echo $revisionClass ?> navbar-btn dropdown-toggle ipsContentRevisions" data-toggle="dropdown"><i class="fa fa-fw fa-caret-down"></i></button>
