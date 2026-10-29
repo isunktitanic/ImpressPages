@@ -221,3 +221,33 @@ $(document).on('hide.bs.modal', '.modal', function (e) {
         e.preventDefault();
     }
 });
+
+/**
+ * Make collapsible form section titles (<legend data-toggle="collapse">) work with the keyboard
+ * and tell screen readers whether the section is open.
+ */
+function ipAdminInitCollapsibleLegends($context) {
+    "use strict";
+    $context.find('legend[data-toggle=collapse]').each(function () {
+        var $legend = $(this);
+        var $target = $($legend.attr('data-target'));
+        $legend
+            .attr('role', 'button')
+            .attr('tabindex', '0')
+            .attr('aria-expanded', $target.hasClass('in') ? 'true' : 'false')
+            .attr('aria-controls', $target.attr('id'))
+            .off('keydown.ipCollapsible').on('keydown.ipCollapsible', function (e) {
+                if (e.keyCode === 13 || e.keyCode === 32) {
+                    e.preventDefault();
+                    $legend.click();
+                }
+            });
+        $target
+            .off('shown.bs.collapse.ipCollapsible').on('shown.bs.collapse.ipCollapsible', function () {
+                $legend.attr('aria-expanded', 'true');
+            })
+            .off('hidden.bs.collapse.ipCollapsible').on('hidden.bs.collapse.ipCollapsible', function () {
+                $legend.attr('aria-expanded', 'false');
+            });
+    });
+}

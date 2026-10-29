@@ -5,6 +5,7 @@
 
     <?php ipAddCss('Ip/Internal/Core/assets/admin/admin.css'); ?>
     <?php ipAddCss('Ip/Internal/Core/assets/admin/adminExtra.css'); ?>
+    <?php ipAddCss('Ip/Internal/Core/assets/admin/adminIcons.css'); ?>
 
     <?php echo ipHead(); ?>
 </head>

@@ -113,6 +113,7 @@ class Event
 
             ipAddCss('Ip/Internal/Core/assets/admin/admin.css');
             ipAddCss('Ip/Internal/Core/assets/admin/adminExtra.css');
+            ipAddCss('Ip/Internal/Core/assets/admin/adminIcons.css');
 
         }
     }

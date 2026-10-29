@@ -163,6 +163,7 @@ var ipDesign = new function () {
         $('.ipModuleDesignConfig .ipsBody .collapse').on('shown.bs.collapse', function () {
             fixAccordion();
         });
+        ipAdminInitCollapsibleLegends($('.ipModuleDesignConfig .ipsBody'));
     };
 
     var fixAccordion = function () {

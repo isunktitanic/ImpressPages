@@ -212,11 +212,17 @@ var ipPageDragId;
                 $positionSelect.find('option[value=child]').show();
                 $positionSelect.find('option[value=below]').show();
                 $positionSelect.val($scope.activeMenu.defaultPositionWhenSelected);
+                if (!$positionSelect.val()) {
+                    $positionSelect.val('below'); // stored value missing or from an old version (e.g. "bellow")
+                }
                 if ($scope.activeMenu.type == 'list') {
                     $positionSelect.find('option[value=child]').hide();
                 }
             } else {
                 $positionSelect.val($scope.activeMenu.defaultPosition);
+                if (!$positionSelect.val()) {
+                    $positionSelect.val('bottom');
+                }
                 $positionSelect.find('option[value=above]').hide();
                 $positionSelect.find('option[value=child]').hide();
                 $positionSelect.find('option[value=below]').hide();

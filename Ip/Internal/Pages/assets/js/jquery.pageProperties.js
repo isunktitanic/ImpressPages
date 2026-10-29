@@ -62,6 +62,7 @@
         });
 
         ipInitForms();
+        ipAdminInitCollapsibleLegends($this);
         $this.data('ipPagePropertiesDirty', false);
         $this.find('form').on('ipSubmit', function () {
             ipAdminNotify.saving();

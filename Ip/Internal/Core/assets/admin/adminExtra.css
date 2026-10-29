@@ -72,3 +72,207 @@
 .ip .ipModuleDesignConfig .modal-header .close:focus {
     opacity: 1;
 }
+
+/*
+ * Visual refresh: calmer surfaces, rounded controls, clear focus, readable contrast.
+ * Only overrides admin.css; markup is unchanged.
+ */
+.ip,
+.ip .btn,
+.ip .form-control,
+.ip .navbar,
+.ip .modal-content {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Buttons */
+.ip .btn {
+    min-height: 32px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: background-color .15s, border-color .15s, box-shadow .15s;
+}
+.ip .btn-sm,
+.ip .btn-xs {
+    min-height: 28px;
+    padding: 4px 10px;
+}
+.ip .btn .fa {
+    margin-right: 2px;
+}
+.ip .btn-default {
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    color: #1f2937;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, .05);
+}
+.ip .btn-default:hover,
+.ip .btn-default:focus {
+    border-color: #b8bec8;
+    background: #f5f6f8;
+    color: #111827;
+}
+.ip .btn-primary,
+.ip .btn-success {
+    border-color: #4d8a00;
+    background: #4d8a00;
+    color: #fff;
+}
+.ip .btn-primary:hover,
+.ip .btn-primary:focus,
+.ip .btn-success:hover,
+.ip .btn-success:focus {
+    border-color: #3f7200;
+    background: #3f7200;
+    color: #fff;
+}
+.ip .btn-new {
+    border-color: #0b7fb0;
+    background: #0b7fb0;
+    color: #fff;
+}
+.ip .btn-new:hover,
+.ip .btn-new:focus {
+    border-color: #096a93;
+    background: #096a93;
+    color: #fff;
+}
+.ip .btn-danger {
+    border-color: #d0d5dd;
+    background: #fff;
+    color: #b42318;
+}
+.ip .btn-danger:hover,
+.ip .btn-danger:focus {
+    border-color: #b42318;
+    background: #b42318;
+    color: #fff;
+}
+.ip .btn.disabled,
+.ip .btn[disabled] {
+    opacity: .45;
+}
+
+/* Form fields */
+.ip .form-control {
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, .05);
+}
+.ip .form-control:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .2);
+}
+.ip label {
+    color: #344054;
+    font-weight: 600;
+}
+.ip .help-block {
+    color: #5d6470;
+}
+
+/* Keyboard focus that is always visible */
+.ip a:focus-visible,
+.ip button:focus-visible,
+.ip .btn:focus-visible,
+.ip [role=button]:focus-visible,
+.ip input[type=checkbox]:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Collapsible form sections (SEO, Other, theme option groups) */
+.ip legend[data-toggle=collapse] {
+    cursor: pointer;
+    user-select: none;
+}
+.ip legend[data-toggle=collapse]:hover {
+    color: #0b7fb0;
+}
+
+/* Dialogs */
+.ip .modal-content {
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(16, 24, 40, .2);
+    overflow: hidden;
+}
+.ip .modal-header {
+    border-bottom: 1px solid #eaecf0;
+    background: #fff;
+}
+.ip .modal-footer {
+    border-top: 1px solid #eaecf0;
+    background: #f9fafb;
+}
+.ip .modal-header .close {
+    min-width: 32px;
+    min-height: 32px;
+    margin: -6px -8px 0 0;
+    color: #344054;
+    font-size: 24px;
+    opacity: .65;
+}
+.ip .modal-header .close:hover,
+.ip .modal-header .close:focus {
+    opacity: 1;
+}
+.ip .modal-backdrop.in {
+    opacity: .45;
+}
+
+/* Side sub-navigation (System, Administrators, Log, Email log): readable contrast */
+.ip .ipAdminSubmenu ul a {
+    color: #4b5160;
+}
+.ip .ipAdminSubmenu ul a:hover {
+    color: #0b7fb0;
+}
+.ip .ipAdminSubmenu ul .active a {
+    color: #111827;
+}
+
+/* Top bar */
+.ip .ipAdminNavbar .navbar-nav > li > a .fa {
+    margin-right: 4px;
+}
+.ip .ipAdminNavbar .ipsAdminLogout {
+    font-weight: 600;
+}
+
+/* Content editor widget bar: softer tiles for the outline icons */
+.ip .ipAdminPanel ._icon {
+    padding: 4px;
+}
+
+/* Pages: keep "Add page" and the cut/copy/paste group on one row in the narrow column */
+.ip .ipsPagesContainer ._actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+.ip .ipsPagesContainer ._actions .btn-group .btn {
+    padding: 6px 8px;
+}
+.ip .ipsPagesContainer ._actions .btn-group .btn .fa {
+    margin-right: 0;
+}
+
+/* Keep the publish status on the same line as the Publish button */
+.ip .ipAdminNavbar .navbar-center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+.ip .ipAdminNavbar .navbar-center-container .ipModuleContentPublishStatus {
+    margin-right: 0;
+}
+.ip .ipAdminNavbar .navbar-center-container .navbar-btn {
+    margin-top: 0;
+    margin-bottom: 0;
+}

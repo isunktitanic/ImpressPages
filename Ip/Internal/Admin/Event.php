@@ -35,8 +35,8 @@ class Event
 
         $navbarButtons = array(
             array(
-                'text' => '',
-                'hint' => __('Logout', 'Ip-admin', false),
+                'text' => esc(__('Log out', 'Ip-admin', false)),
+                'hint' => __('Log out', 'Ip-admin', false),
                 'url' => ipActionUrl(array('sa' => 'Admin.logout')),
                 'class' => 'ipsAdminLogout',
                 'faIcon' => 'fa-power-off'
