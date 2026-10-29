@@ -1,5 +1,5 @@
 <div class="ip ipsAdminNavbarContainer">
-    <div class="ipAdminNavbar ipsAdminNavbar navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="ipAdminNavbar ipsAdminNavbar navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" aria-label="<?php _e('Administration', 'Ip-admin'); ?>">
         <button type="button" class="_toggle ipsAdminMenu navbar-toggle" aria-label="<?php _e('Menu', 'Ip-admin'); ?>" title="<?php _e('Menu', 'Ip-admin'); ?>">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -15,7 +15,7 @@
                 <p class="navbar-text"><?php _e('Menu', 'Ip-admin'); ?></p>
             </div>
             <div class="_menuContainer ipsAdminMenuBlockContainer">
-                <nav>
+                <nav aria-label="<?php _e('Main menu', 'Ip-admin'); ?>">
                     <?php
                         $data = array(
                             'items' => $menuItems,

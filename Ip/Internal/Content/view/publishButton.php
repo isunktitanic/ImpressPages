@@ -35,7 +35,7 @@ if (!$isVisible && ipIsManagementState()) {
 <span class="ipModuleContentPublishStatus ipsContentStatus <?php echo $statusClass ?>"><?php echo esc($statusText) ?></span>
 <div class="ipModuleContentPublishButton btn-group">
     <button type="button" class="btn <?php echo $buttonClass ?> navbar-btn <?php echo $buttonAction ?>"><?php echo esc($buttonText) ?></button>
-    <button type="button" class="btn <?php echo $revisionClass ?> navbar-btn dropdown-toggle ipsContentRevisions" data-toggle="dropdown"><i class="fa fa-fw fa-caret-down"></i></button>
+    <button type="button" class="btn <?php echo $revisionClass ?> navbar-btn dropdown-toggle ipsContentRevisions" data-toggle="dropdown" aria-haspopup="true" aria-label="<?php _e('Save draft and revisions', 'Ip-admin'); ?>" title="<?php _e('Save draft and revisions', 'Ip-admin'); ?>"><i class="fa fa-fw fa-caret-down"></i></button>
     <ul class="_revisions dropdown-menu" role="menu">
         <li class="_button"><button type="button" class="btn <?php echo $button2Class ?>  btn-block <?php echo $button2Action ?>"><?php echo esc($button2Text) ?></button></li>
         <li class="divider"></li>
