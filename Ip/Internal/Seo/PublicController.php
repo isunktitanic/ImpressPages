@@ -66,11 +66,14 @@ class PublicController extends \Ip\Controller
             return new \Ip\Response\PageNotFound();
         }
 
-        $sections = Model::getSitePages();
+        // A language without public pages (e.g. one just added) would only add an empty heading.
+        $sections = array_values(array_filter(Model::getSitePages(), function ($section) {
+            return !empty($section['pages']);
+        }));
         $multilingual = count($sections) > 1;
         $firstLanguage = $sections ? $sections[0]['language']->getCode() : null;
 
-        $title = ipGetOptionLang('Config.websiteTitle', $firstLanguage, '');
+        $title = trim((string)ipGetOptionLang('Config.websiteTitle', $firstLanguage, ''));
         $summary = trim((string)ipGetOptionLang('Config.websiteDescription', $firstLanguage, ''));
         if ($summary === '' && !empty($sections[0]['pages'][0]['isHome'])) {
             $summary = $sections[0]['pages'][0]['description'];

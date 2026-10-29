@@ -31,7 +31,7 @@ class Model
 
     /**
      * Public pages of one language: the home page first, then every menu walked depth first.
-     * Hidden pages hide their whole branch, as they do in menus.
+     * A hidden menu or page hides its whole branch.
      *
      * @param \Ip\Language $language
      * @return array
@@ -43,7 +43,7 @@ class Model
         $menus = ipDb()->selectAll(
             'page',
             '*',
-            array('languageCode' => $language->getCode(), 'parentId' => 0, 'isDeleted' => 0),
+            array('languageCode' => $language->getCode(), 'parentId' => 0, 'isDeleted' => 0, 'isVisible' => 1),
             'ORDER BY `pageOrder`'
         );
 
