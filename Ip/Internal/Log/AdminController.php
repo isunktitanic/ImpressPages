@@ -20,6 +20,7 @@ class AdminController extends \Ip\GridController
         return array(
             'type' => 'table',
             'table' => 'log',
+            'title' => __('Log', 'Ip-admin', false),
             'allowCreate' => false,
             'allowUpdate' => false,
             'allowDelete' => false,
