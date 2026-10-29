@@ -2,6 +2,8 @@
 
 This is a community fork of [ImpressPages](https://github.com/impresspages/ImpressPages), whose last release (5.0.3) dates from 2017 and does not run on modern PHP. The `php8` branch brings it up to date while keeping the existing API, themes and plugins working.
 
+**Current version:** 5.1.0, the first release of this fork.
+
 **Requirements:** PHP 8.1 or newer (tested on PHP 8.5) and MySQL or MariaDB.
 
 ### What changed from 5.0.3
@@ -12,6 +14,7 @@ This is a community fork of [ImpressPages](https://github.com/impresspages/Impre
 - PHP 8.x fixes: removed the reserved `String` class, declared dynamic properties, explicit nullable parameters, `(float)` casts, null-safe escaping helpers, `E_STRICT` removed, a crash in the translation loader and the DB exception class, and log messages trimmed to fit their column.
 - The installer and admin no longer contact impresspages.org (the statistics service and tracking frames are gone; the server is offline).
 - The start-pack `index.php` no longer swallows requests to `index.php` when using PHP's built-in web server.
+- The home page canonical link no longer has a doubled slash (`https://example.com//`).
 
 The original README follows.
 
