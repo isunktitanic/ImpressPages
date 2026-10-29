@@ -172,7 +172,8 @@ class Display
         if ($this->subgridConfig->allowCreate()) {
             $actions['add'] = array(
                 'label' => __('Add', 'Ip-admin', false),
-                'class' => 'ipsCreate'
+                'class' => 'ipsCreate',
+                'primary' => true
             );
         }
         if ($this->subgridConfig->allowSearch()) {

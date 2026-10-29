@@ -115,26 +115,24 @@
     color: #111827;
 }
 .ip .btn-primary,
-.ip .btn-success {
-    border-color: #4d8a00;
-    background: #4d8a00;
+.ip .btn-success,
+.ip .btn-new,
+.ip .ipAdminPages ._menus .btn-new,
+.ip .ipAdminPages ._languages .btn-new {
+    border-color: #0b7fb0;
+    background: #0b7fb0;
     color: #fff;
 }
 .ip .btn-primary:hover,
 .ip .btn-primary:focus,
 .ip .btn-success:hover,
-.ip .btn-success:focus {
-    border-color: #3f7200;
-    background: #3f7200;
-    color: #fff;
-}
-.ip .btn-new {
-    border-color: #0b7fb0;
-    background: #0b7fb0;
-    color: #fff;
-}
+.ip .btn-success:focus,
 .ip .btn-new:hover,
-.ip .btn-new:focus {
+.ip .btn-new:focus,
+.ip .ipAdminPages ._menus .btn-new:hover,
+.ip .ipAdminPages ._menus .btn-new:focus,
+.ip .ipAdminPages ._languages .btn-new:hover,
+.ip .ipAdminPages ._languages .btn-new:focus {
     border-color: #096a93;
     background: #096a93;
     color: #fff;
@@ -151,7 +149,12 @@
     color: #fff;
 }
 .ip .btn.disabled,
-.ip .btn[disabled] {
+.ip .btn[disabled],
+.ip .btn-default.disabled,
+.ip .btn-default[disabled] {
+    border-color: #d0d5dd;
+    background: #fff;
+    color: #1f2937;
     opacity: .45;
 }
 
@@ -297,4 +300,88 @@
 .ip .ipModuleDesignConfig .modal-dialog {
     width: 380px;
     max-width: calc(100vw - 16px);
+}
+
+/*
+ * One button rule for the whole admin:
+ *   main action (add, save, activate) .btn-primary / .btn-new / .btn-success  -> blue
+ *   secondary (edit, cancel, search, clear cache) .btn-default                 -> white with border
+ *   destructive .btn-danger                                                     -> red outline, red on hover
+ *   publish / unpublished changes .btn-warning                                  -> amber (a status signal)
+ *   icon-only tools .btn-controls                                               -> white square
+ */
+.ip .btn-controls {
+    min-width: 32px;
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    color: #344054;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, .05);
+}
+.ip .btn-controls:hover,
+.ip .btn-controls:focus {
+    border-color: #b8bec8;
+    background: #f5f6f8;
+    color: #111827;
+}
+.ip .btn-controls.btn-xs {
+    min-width: 26px;
+    min-height: 26px;
+    padding: 3px 6px;
+}
+.ip .btn-warning {
+    border-color: #d97706;
+    background: #f59e0b;
+    color: #1f2937;
+}
+.ip .btn-warning:hover,
+.ip .btn-warning:focus {
+    border-color: #b45309;
+    background: #d97706;
+    color: #111827;
+}
+
+/* Permission switches (Administrators) */
+.ip .ipAdminPermission {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+.ip .ipAdminPermission label {
+    margin: 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+.ip .ipAdminSwitch {
+    position: relative;
+    flex: none;
+    width: 40px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    border-radius: 11px;
+    background: #c4c9d1;
+    cursor: pointer;
+    transition: background-color .15s;
+}
+.ip .ipAdminSwitch ._knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, .3);
+    transition: left .15s;
+}
+.ip .ipAdminSwitch._on {
+    background: #0b7fb0;
+}
+.ip .ipAdminSwitch._on ._knob {
+    left: 20px;
+}
+.ip .ipAdminSwitch:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
 }

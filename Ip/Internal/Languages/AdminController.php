@@ -48,8 +48,9 @@ class AdminController extends \Ip\GridController
             'allowDelete' => count(ipContent()->getLanguages()) > 1,
             'actions' => array(
                 array(
-                    'label' => __('Add', 'Ip-admin', false),
-                    'class' => 'ipsCustomAdd'
+                    'label' => __('Add language', 'Ip-admin', false),
+                    'class' => 'ipsCustomAdd',
+                    'primary' => true
                 )
             ),
             'preventAction' => array($this, 'preventAction'),

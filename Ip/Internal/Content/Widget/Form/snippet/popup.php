@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-new ipsFieldAdd"><?php _e('Add new', 'Ip-admin'); ?></button>
+                            <button type="button" class="btn btn-new ipsFieldAdd"><?php _e('Add field', 'Ip-admin'); ?></button>
                         </div>
 
                         <div class="tab-pane" id="ipWidgetFormPopup-options">
